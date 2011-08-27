@@ -1,0 +1,51 @@
+<html>
+	<head>
+		<title>Vitruvian Donut</title>
+	</head>
+	<body>
+		<h1>Vitruvian Donut</h1>
+		<p>This is a tool that aims at helping you create complex and complete modular scales. It supports (will support) a large number of known ratios and allow you to add your owns. You also get the ability to add up to 5 additional numbers to your scale.</p>
+		
+		<section id="controls">
+			<div id="currents">
+				Here, the currently showed Scales
+			</div>
+			<form action="#" id="add">
+				<fieldset>
+					<legend>Add a Scale</legend>
+					<ol>
+						<li><label for="base-nb">Base Number</label><input type="text" name="base-nb" /> (px)</li>
+						<li>
+							<label for="formula"></label>
+							<select name="formula" id="formula"></select>
+						</li>
+						<li>
+							<label for="limit-min">Limits<span class="hide"> minimum</span></label>
+							<input type="text" name="limit-min" value="1" />
+							<label for="limit-max"><span class="hide">Limits maximum</span></label>
+							<input type="text" name="limit-max" value="1000" />
+						</li>
+						<div class="add-pool">
+							<li class="additional">
+								<label for="add-nb-1">Additional Number (0)</label>
+								<input type="text" name="add-nb-1" />
+							</li>
+						</div>
+						<li class="add-link">
+							<a href="#">add a number</a>
+						</li>
+						<li class="submit">
+							<input type="submit" value="Create" />
+						</li>
+					</ol>
+				</fieldset>
+			</form>
+		</section>
+		
+		<section id="scales">
+			
+		</section>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="script.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>
