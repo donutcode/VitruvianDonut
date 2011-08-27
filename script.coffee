@@ -6,6 +6,10 @@ jQuery ($) ->
 	#magic happens
 	calculate = (e) ->
 		e.preventDefault()
+		data = get_data_from("form",null)
+		alert data.base_number
+		result = create_result_container()
+		
 	
 	#add a number to the form
 	add_number = (e) ->
@@ -72,6 +76,21 @@ jQuery ($) ->
 				id : "mufourth"
 			},
 		]
+	
+	#create the result div
+	create_result_container = () ->
+		n = $("#scales .result").length + 1
+		$("#scales").append('<div class="result" data-index="'+n+'" />')
+		result = $('#scales .result[data-index='+n+']')
+	
+	#gets the data from the form and sends them back as an aray
+	get_data_from = (from, index) ->
+		if from == "form"
+			data = {
+				base_number: $('#add input[name=base-nb]').val()
+				scale: $('#add select[name=formula] option:selected').val()
+			}
+		
 	
 	
 	#match events and functions

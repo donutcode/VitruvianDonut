@@ -1,6 +1,6 @@
 (function() {
   jQuery(function($) {
-    var a, add_number, calculate, delete_add_number, get_ratio_list, init, make_new_number, re_make_numbers, toggle_add_smart;
+    var a, add_number, calculate, create_result_container, delete_add_number, get_data_from, get_ratio_list, init, make_new_number, re_make_numbers, toggle_add_smart;
     init = function() {
       var a, x, _i, _len, _results;
       a = get_ratio_list();
@@ -12,7 +12,11 @@
       return _results;
     };
     calculate = function(e) {
-      return e.preventDefault();
+      var data, result;
+      e.preventDefault();
+      data = get_data_from("form", null);
+      alert(data.base_number);
+      return result = create_result_container();
     };
     add_number = function(e) {
       var n, pool;
@@ -75,6 +79,21 @@
           id: "mufourth"
         }
       ];
+    };
+    create_result_container = function() {
+      var n, result;
+      n = $("#scales .result").length + 1;
+      $("#scales").append('<div class="result" data-index="' + n + '" />');
+      return result = $('#scales .result[data-index=' + n + ']');
+    };
+    get_data_from = function(from, index) {
+      var data;
+      if (from === "form") {
+        return data = {
+          base_number: $('#add input[name=base-nb]').val(),
+          scale: $('#add select[name=formula] option:selected').val()
+        };
+      }
     };
     $("#add").submit(a = function(event) {
       return calculate(event);
